@@ -1,0 +1,16 @@
+#app, #card {
+    background-color: #1B262C;
+    color: #F5F2E7;
+}
+
+#modal {
+    background-color: #2C3333;
+    color: #E7F6F2;
+}
+
+#budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+}
