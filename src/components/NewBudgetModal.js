@@ -14,7 +14,7 @@ export default function NewBudgetModal({ show, onClose }) {
 
         addBudget({
             name: nameRef.current.value,
-            max: maxRef.current.value
+            max: parseFloat(maxRef.current.value)
         })
 
         onClose();

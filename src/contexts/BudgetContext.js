@@ -4,7 +4,7 @@ import useLocalStorage from "../hoooks/useLocalStorage"
 
 const BudgetContext = React.createContext()
 
-export const uncategorizedBudgetID = "Uncategorized"
+export const uncategorizedBudgetId = "Uncategorized"
 
 export function useBudgets() {
     return useContext(BudgetContext)
@@ -14,12 +14,12 @@ export const BudgetProvider = ({ children }) => {
     const [budgets, setBudgets] = useLocalStorage("budgets", [])
     const [expenses, setExpenses] = useLocalStorage("expenses", [])
 
-    function getExpenses(budgetID) {
-        return expenses.filter(expense => expense.budgetID === budgetID)
+    function getExpenses(budgetId) {
+        return expenses.filter(expense => expense.budgetId === budgetId)
     }
 
-    function addExpense({ description, amount, budgetID }) {
-        setExpenses([...expenses, { ID: uuidv4(), description, amount, budgetID }])
+    function addExpense({ description, amount, budgetId }) {
+        setExpenses([...expenses, { id: uuidv4(), description, amount, budgetId }])
     }
 
     function addBudget({ name, max }) {
@@ -27,7 +27,7 @@ export const BudgetProvider = ({ children }) => {
             if (prevBudgets.find(budget => budget.name === name)) {
                 return prevBudgets
             }
-            return [...prevBudgets, { ID: uuidv4(), name, max }]
+            return [...prevBudgets, { id: uuidv4(), name, max }]
         })
     }
 
@@ -35,7 +35,7 @@ export const BudgetProvider = ({ children }) => {
         setExpenses(prevExpenses => {
           return prevExpenses.map(expense => {
             if (expense.budgetId !== id) return expense
-            return { ...expense, budgetId: uncategorizedBudgetID }
+            return { ...expense, budgetId: uncategorizedBudgetId }
           })
         })
     
@@ -44,9 +44,9 @@ export const BudgetProvider = ({ children }) => {
         })
       }
 
-    function deleteExpense({ ID }) {
+    function deleteExpense({ id }) {
         setExpenses(prevExpenses => {
-            return prevExpenses.filter(expense => expense.ID !== ID)
+            return prevExpenses.filter(expense => expense.id !== id)
         })
     }
 

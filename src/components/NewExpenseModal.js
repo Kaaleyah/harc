@@ -1,12 +1,12 @@
 import { Modal, Form, Button } from 'react-bootstrap';
 import { useRef } from 'react';
-import { useBudgets, uncategorizedBudgetID } from '../contexts/BudgetContext';
+import { useBudgets, uncategorizedBudgetId } from '../contexts/BudgetContext';
 import '../style.css';
 
-export default function NewExpenseModal({ show, onClose, defaultBudgetID }) {
+export default function NewExpenseModal({ show, onClose, defaultBudgetId }) {
     const descriptionRef = useRef();
     const amountRef = useRef();
-    const budgetIDRef = useRef();
+    const budgetIdRef = useRef();
 
     const { addExpense, budgets } = useBudgets();
  
@@ -15,8 +15,8 @@ export default function NewExpenseModal({ show, onClose, defaultBudgetID }) {
 
         addExpense({
             description: descriptionRef.current.value,
-            amount: amountRef.current.value,
-            budgetID: budgetIDRef.current.value
+            amount: parseFloat(amountRef.current.value),
+            budgetId: budgetIdRef.current.value
         })
 
         onClose();
@@ -40,12 +40,12 @@ export default function NewExpenseModal({ show, onClose, defaultBudgetID }) {
                         <Form.Control ref={amountRef} type="number" required min={0} step={0.01} />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="budgetID">
+                    <Form.Group className="mb-3" controlId="budgetId">
                         <Form.Label>Budget</Form.Label>
-                        <Form.Select ref={budgetIDRef}  defaultValue={defaultBudgetID}>
-                            <option id={uncategorizedBudgetID}>Uncategorized</option>
+                        <Form.Select ref={budgetIdRef}  defaultValue={defaultBudgetId}>
+                            <option id={uncategorizedBudgetId}>Uncategorized</option>
                             {budgets.map(budget => (
-                                <option key={budget.ID} value={budget.ID}>{budget.name}</option>
+                                <option key={budget.id} value={budget.id}>{budget.name}</option>
                             ))}
                         </Form.Select>
                     </Form.Group>

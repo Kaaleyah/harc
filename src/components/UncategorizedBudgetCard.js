@@ -1,10 +1,10 @@
-import { uncategorizedBudgetID, useBudgets } from "../contexts/BudgetContext"
+import { uncategorizedBudgetId, useBudgets } from "../contexts/BudgetContext"
 import BudgetCard from "./BudgetCard"
 
 export default function UncategorizedBudgetCard(props) {
     const { getExpenses } = useBudgets()
 
-    const amount = getExpenses(uncategorizedBudgetID).reduce(
+    const amount = getExpenses(uncategorizedBudgetId).reduce(
         (total, expense) => total + expense.amount,
         0
     )
