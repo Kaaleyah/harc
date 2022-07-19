@@ -6,7 +6,7 @@ You can add a budget with a maximum spending amount and add expenses to that bud
 
 You can check out the demo: https://harcapp.netlify.app/
 
-![enter image description here](https://i.ibb.co/Hxz57H0/harc.png)
+![enter image description here](https://i.ibb.co/TKwJtQb/Screen-Shot-2022-07-20-at-02-40-43.png)
 
 ## Installation
 
