@@ -22,7 +22,7 @@ export default function ViewExpensesModal({ budgetId, onClose }) {
                             <div>Expenses - {budget?.name}</div>
                             {budgetId !== uncategorizedBudgetId && (
                                 <Button variant="outline-danger" onClick={() => {
-                                    deleteBudget(budgetId);
+                                    deleteBudget(budget);
                                     onClose();
                                 }}>Delete</Button>
                             )}
