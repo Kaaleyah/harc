@@ -1,5 +1,7 @@
 # Harc
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdfe5d17-6d13-49af-9fa9-66abcac1c061/deploy-status)](https://app.netlify.com/sites/harcapp/deploys)
+
 Harc is budget app powered by React.js. 
 
 You can add a budget with a maximum spending amount and add expenses to that budget. Uncategorized expenses will be shown separately. All of the expenses and maximum spending amount will be shown at the very bottom of the app. 
