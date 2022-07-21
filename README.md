@@ -1,6 +1,6 @@
 # Harc
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bdfe5d17-6d13-49af-9fa9-66abcac1c061/deploy-status)](https://app.netlify.com/sites/harcapp/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdfe5d17-6d13-49af-9fa9-66abcac1c061/deploy-status)]
 
 Harc is budget app powered by React.js. 
 
